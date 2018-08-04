@@ -36,6 +36,7 @@ Partial Class ReceivedItem
         Me.Panel2 = New System.Windows.Forms.Panel
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.GridEX2 = New Janus.Windows.GridEX.GridEX
+        Me.Label1 = New System.Windows.Forms.Label
         Me.ToolStrip1.SuspendLayout()
         CType(Me.GridEX1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -103,6 +104,7 @@ Partial Class ReceivedItem
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Panel4)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Panel3)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Panel2)
@@ -193,6 +195,20 @@ Partial Class ReceivedItem
         Me.GridEX2.TabIndex = 1
         Me.GridEX2.TableHeaderFormatStyle.Appearance = Janus.Windows.GridEX.Appearance.Flat
         '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Label1.Font = New System.Drawing.Font("Khmer OS Battambang", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Blue
+        Me.Label1.Location = New System.Drawing.Point(40, 3)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 44)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "ចំនួនជំពាក់"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'ReceivedItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -225,5 +241,6 @@ Partial Class ReceivedItem
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents GridEX2 As Janus.Windows.GridEX.GridEX
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class
