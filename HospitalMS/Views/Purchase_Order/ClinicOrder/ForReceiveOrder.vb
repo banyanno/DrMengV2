@@ -2,10 +2,6 @@
     Dim TableReceiveTem As DataTable = New DSInventoryClinic.RECEIVE_ITEM_TEM_DETAILDataTable
     Dim DAItem As New DSInventoryClinicTableAdapters.tblItemTableAdapter
     Dim DASupplier As New DSInventoryClinicTableAdapters.tblLabourFactoryTableAdapter
-
-    Dim DAReceiveMaster As New DSInventoryClinicTableAdapters.ITEM_RECIEVE_MASTERTableAdapter
-    Dim DAReceiveItemDedial As New DSInventoryClinicTableAdapters.ITEM_RECIEVE_DETIALTableAdapter
-
     Sub New()
 
         ' This call is required by the Windows Form Designer.
@@ -116,7 +112,7 @@
             TxtTotalAmoutExcludVAT.Text = TotalExcludeVAT
             TxtVAT.Text = (Tax / 100) * TotalExcludeVAT
             TxtTotalAmountIncludVAT.Text = TotalExcludeVAT + EmptyString(TxtVAT.Text)
-            TxtTotalAmounDue.Text = ((TotalExcludeVAT + EmptyString(TxtVAT.Text)) - Diposit)
+            TxtAmounDue.Text = ((TotalExcludeVAT + EmptyString(TxtVAT.Text)) - Diposit)
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -164,27 +160,4 @@
     End Sub
 
    
-    Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
-        If ValidateCombobox(CboSupplier, "", ErrReceive) = False Then Exit Sub
-        If ValidateTextField(TxtInvoiceReferenceNo, "", ErrReceive) = False Then Exit Sub
-        If ValidateDateTimePicker(DateInvoiceReference, "", ErrReceive) = False Then Exit Sub
-        If ValidateDateTimePicker(DateInvoiceDueDate, "", ErrReceive) = False Then Exit Sub
-        If GridListItemReceive.SelectedItems.Count = 0 Then
-            MessageBox.Show("Please enter item to list receive.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-
-        ' Save New Receive by Item
-        If LblSaveOption.Text = "0" Then
-            If DAReceiveMaster.InsertReceiveMaster(Now.Date, TxtInvoiceReferenceNo.Text, DateInvoiceReference.Value.Date, DateInvoiceDueDate.Value.Date, TxtTeam.Text, CboSupplier.SelectedValue, CboSupplier.Text, "", EmptyString(TxtTotalAmoutExcludVAT.Text), EmptyString(TxtVATPercent.Text), EmptyString(TxtVAT.Text), EmptyString(TxtTotalAmountIncludVAT.Text), EmptyString(TxtDeposit.Text), EmptyString(TxtTotalAmounDue.Text), TxtReceiveNote.Text, 1, "") = 1 Then
-                Dim LastSaveID As Double = DAReceiveMaster.SelectMaxReceive
-                For Each rows In TableReceiveTem.Rows
-                    DAReceiveItemDedial.InsertNewItemReceiveDetial(LastSaveID, CDbl(rows("ITEM_ID")), CStr(rows("ITEM_NAME")), CSng(rows("ITEM_MEASURE")), CDate(rows("ITEM_EXPIRYDATE")), CDbl(rows("ITEM_QTY")), CDbl(rows("ITEM_PRICE")), CDbl(rows("TOTAL_AMOUNT")))
-                Next
-            End If
-            ' Update Existing item
-        Else
-
-        End If
-    End Sub
 End Class
