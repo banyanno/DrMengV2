@@ -3060,6 +3060,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSInventoryClinic.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Views\Purchase_Order\ClinicOrder\DSInventoryClinic.vb">
+      <DependentUpon>DSInventoryClinic.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Views\Purchase_Order\ClinicOrder\ForReceiveOrder.Designer.vb">
       <DependentUpon>ForReceiveOrder.vb</DependentUpon>
     </Compile>

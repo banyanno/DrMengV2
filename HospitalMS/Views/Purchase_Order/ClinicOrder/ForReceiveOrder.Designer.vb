@@ -63,7 +63,7 @@ Partial Class ForReceiveOrder
         Me.TxtReceiveNote = New System.Windows.Forms.TextBox
         Me.UiGroupBox6 = New Janus.Windows.EditControls.UIGroupBox
         Me.TxtVATPercent = New System.Windows.Forms.TextBox
-        Me.TxtAmounDue = New System.Windows.Forms.TextBox
+        Me.TxtTotalAmounDue = New System.Windows.Forms.TextBox
         Me.TxtDeposit = New System.Windows.Forms.TextBox
         Me.TxtTotalAmountIncludVAT = New System.Windows.Forms.TextBox
         Me.TxtVAT = New System.Windows.Forms.TextBox
@@ -528,7 +528,7 @@ Partial Class ForReceiveOrder
         '
         Me.UiGroupBox6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UiGroupBox6.Controls.Add(Me.TxtVATPercent)
-        Me.UiGroupBox6.Controls.Add(Me.TxtAmounDue)
+        Me.UiGroupBox6.Controls.Add(Me.TxtTotalAmounDue)
         Me.UiGroupBox6.Controls.Add(Me.TxtDeposit)
         Me.UiGroupBox6.Controls.Add(Me.TxtTotalAmountIncludVAT)
         Me.UiGroupBox6.Controls.Add(Me.TxtVAT)
@@ -558,17 +558,17 @@ Partial Class ForReceiveOrder
         Me.TxtVATPercent.Text = "0"
         Me.TxtVATPercent.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'TxtAmounDue
+        'TxtTotalAmounDue
         '
-        Me.TxtAmounDue.BackColor = System.Drawing.Color.Silver
-        Me.TxtAmounDue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtAmounDue.Location = New System.Drawing.Point(254, 152)
-        Me.TxtAmounDue.Name = "TxtAmounDue"
-        Me.TxtAmounDue.ReadOnly = True
-        Me.TxtAmounDue.Size = New System.Drawing.Size(195, 26)
-        Me.TxtAmounDue.TabIndex = 5
-        Me.TxtAmounDue.Text = "0"
-        Me.TxtAmounDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TxtTotalAmounDue.BackColor = System.Drawing.Color.Silver
+        Me.TxtTotalAmounDue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtTotalAmounDue.Location = New System.Drawing.Point(254, 152)
+        Me.TxtTotalAmounDue.Name = "TxtTotalAmounDue"
+        Me.TxtTotalAmounDue.ReadOnly = True
+        Me.TxtTotalAmounDue.Size = New System.Drawing.Size(195, 26)
+        Me.TxtTotalAmounDue.TabIndex = 5
+        Me.TxtTotalAmounDue.Text = "0"
+        Me.TxtTotalAmounDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TxtDeposit
         '
@@ -761,7 +761,7 @@ Partial Class ForReceiveOrder
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents TxtAmounDue As System.Windows.Forms.TextBox
+    Friend WithEvents TxtTotalAmounDue As System.Windows.Forms.TextBox
     Friend WithEvents TxtDeposit As System.Windows.Forms.TextBox
     Friend WithEvents TxtTotalAmountIncludVAT As System.Windows.Forms.TextBox
     Friend WithEvents TxtVAT As System.Windows.Forms.TextBox
