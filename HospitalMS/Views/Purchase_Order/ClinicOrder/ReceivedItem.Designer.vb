@@ -22,6 +22,7 @@ Partial Class ReceivedItem
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReceivedItem))
         Dim GridEX2_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
@@ -36,6 +37,7 @@ Partial Class ReceivedItem
         Me.Panel2 = New System.Windows.Forms.Panel
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.GridEX2 = New Janus.Windows.GridEX.GridEX
+        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.ToolStrip1.SuspendLayout()
         CType(Me.GridEX1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -225,5 +227,6 @@ Partial Class ReceivedItem
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents GridEX2 As Janus.Windows.GridEX.GridEX
+    Friend WithEvents VisualStyleManager1 As Janus.Windows.Common.VisualStyleManager
 
 End Class
